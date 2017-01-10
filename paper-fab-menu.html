@@ -200,7 +200,7 @@
     </style>
     <template>
         <div class$="layout {{ position }}">
-            <div open$="{{ show }}" id="mainFab" class="menu-fab-button layout vertical self-center">
+            <div open$="{{ show }}" id="mainFab" on-tap="_toggle" class="menu-fab-button layout vertical self-center">
                 <paper-fab id="paperFab" icon="{{ icon }}"></paper-fab>
             </div>
             <div open$="{{ show }}" id="mainItems" class$="menu-items flex layout {{ position }} self-center">
@@ -237,6 +237,9 @@
             },
             close: function() {
                 this.show = false;
+            },
+            _toggle: function() {
+                this.show = !this.show;
             }
         })
     </script>
